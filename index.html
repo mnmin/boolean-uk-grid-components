@@ -21,7 +21,15 @@
         border: 2px dotted lightcoral;
       }
 
+      .box {
+        min-width: 40px;
+        min-height: 40px;
+        padding: 4px;
+        border: 2px dotted lightcoral;
+      }
+
       .inner-box {
+        place-items: grid;
         min-width: 40px;
         min-height: 40px;
         border: 2px dotted lightgreen;
@@ -31,12 +39,24 @@
 
       /* Write CSS Here */
 
+      
+        
+      
+
       .logo {
         display: grid;
-        align-items: left;
-        padding: 8px;
+        place-items: center;
         border: 2px dotted limegreen;
       }
+
+      .expand {
+        display: grid;
+        place-items: center;
+        
+      }
+      
+
+
       .three-column-grid {
         display: grid;
         place-items: center stretch;
@@ -45,19 +65,11 @@
         gap: 5px;
       }
 
-      .three-column-grid {
-        display: grid;
-        place-items: center;
-        align-items: center;
-        grid-template-columns: 50px, 1fr, 50px;
-        grid-template-rows: 1fr;
-        gap: 5px;
-      }
 
-      .three-column-grid__expand-two {
+      .three-column-grid-expand-two {
         display: grid;
         place-items: center stretch;
-        grid-template-columns: 0.1fr, auto , 0.1fr;
+        grid-template-columns: 0.1fr, 1fr , 0.1fr;
         grid-template-rows: 1fr;
         gap: 5px;
       }
@@ -68,7 +80,7 @@
         align-items: center;
         grid-template-columns: repeat(5, 1fr);
         grid-template-rows: 1fr;
-        gap: 5px
+        gap: 5px;
       }
 
       .center-grid {
@@ -85,6 +97,7 @@
 
       /* Grid within Grid Section */
 
+      /* Grid within Grid #1 */
       .two-column-grid{
         display: grid;
         align-items: stretch;
@@ -109,28 +122,32 @@
         gap: 5px;
       }
 
-
-      .three-column-grid{
-        display: grid;
-        align-items: center stretch;
-        grid-template-columns: repeat (3, 1fr);
-        grid-template-rows: 1fr;
-        gap: 5px
-      }
+      /* Grid within Grid #2 */
       
-      .inner-box-left {
+      .box-left {
         display: grid;
+        place-items: center;
         grid-template-columns: 1fr;
         grid-template-rows: 1fr;
+        gap: 5px;
       }
 
       .inner-box-width-sm {
         display: grid;
-        align-items: stretch;
-        grid-template-columns: 12fr;
+        place-items: center;
       }
     
-      
+      .three-column-grid-right {
+        display: grid;
+        place-items: center;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-columns: 1fr;
+        gap: 5px;
+      }
+    
+
+
+
 
       /* Practice re-using classes */
 
@@ -166,7 +183,7 @@
     </div>
     <div>
       <h2>Three Column Grid with Expansion</h2>
-      <div class="container three-column-grid__expand-two">
+      <div class="container three-column-grid-expand-two">
         <div class="box"></div>
         <div class="box"></div>
         <div class="box"></div>
@@ -209,10 +226,10 @@
       <h2>Grid within Grid #2 (Expansion)</h2>
       <div class="container">
         <div class="box-left">
-          <div class="inner-box-left"></div>
+          <div class="inner-box"></div>
         </div>
         <div class="box expand">
-          <div class="inner-box-width-sm"></div>
+          <div class="inner-box"></div>
         </div>
         <div class="box three-column-grid-right">
           <div class="inner-box"></div>
